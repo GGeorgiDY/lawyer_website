@@ -1,10 +1,29 @@
-{% extends 'base_generic.html' %}
-
-{% block title %}Home - My Website{% endblock %}
+{% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>Welcome to My Website</h1>
-    <p>This is the homepage.</p>
+  <div class="container mt-5">
+    <div class="jumbotron text-center">
+      <h1>Welcome to [Law Firm Name]</h1>
+      <p>Providing expert legal services for [Your Areas of Practice]</p>
+      <a href="{% url 'about' %}" class="btn btn-primary btn-lg">Learn More About Us</a>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <h3>Our Lawyers</h3>
+        <p>Meet our experienced legal team, dedicated to providing top-notch legal advice and representation.</p>
+        <a href="{% url 'lawyers' %}" class="btn btn-secondary">View Lawyers</a>
+      </div>
+      <div class="col-md-4">
+        <h3>Our Services</h3>
+        <p>We specialize in [Your Specializations]. Discover how we can assist with your legal needs.</p>
+        <a href="{% url 'services' %}" class="btn btn-secondary">View Services</a>
+      </div>
+      <div class="col-md-4">
+        <h3>News & Insights</h3>
+        <p>Stay up to date with the latest legal news and insights from our team of experts.</p>
+        <a href="{% url 'news' %}" class="btn btn-secondary">Read News</a>
+      </div>
+    </div>
+  </div>
 {% endblock %}
-
-

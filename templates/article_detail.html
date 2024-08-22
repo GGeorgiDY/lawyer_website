@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.content }}</p>
+    <a href="{% url 'news' %}" class="btn btn-secondary">Back to News</a>
+  </div>
+{% endblock %}
+
+

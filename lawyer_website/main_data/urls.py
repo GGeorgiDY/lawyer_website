@@ -1,6 +1,7 @@
 from django.contrib.auth.views import LogoutView
 from django.urls import path
-from lawyer_website.main_data.views import about, home, register, user_login, change_password, profile_view
+from lawyer_website.main_data.views import about, home, register, user_login, change_password, profile_view, \
+    article_detail, news, location
 from django.contrib.auth import views as auth_views
 
 
@@ -18,5 +19,12 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 
     path('profile/', profile_view, name='profile'),
+
+    path('news/', news, name='news'),
+    path('news/<int:article_id>/', article_detail, name='article_detail'),
+    path('location/', location, name='location'),
+    path('lawyers/', location, name='lawyers'),
+    path('services/', location, name='services'),
+
 ]
 

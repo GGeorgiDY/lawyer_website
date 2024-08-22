@@ -15,6 +15,21 @@ def about(request):
     return render(request, 'about.html')
 
 
+def location(request):
+    return render(request, 'location.html')
+
+
+def news(request):
+    articles = Article.objects.all()  # Fetch all news articles
+    return render(request, 'news.html', {'articles': articles})
+
+
+def article_detail(request, article_id):
+    article = Article.objects.get(id=article_id)
+    return render(request, 'article_detail.html', {'article': article})
+
+
+
 def register(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)

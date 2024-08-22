@@ -96,6 +96,16 @@ USE_I18N = True
 
 USE_TZ = True
 
+# the static files will be entered through static root
 STATIC_URL = 'static/'
 
+# but they will be in folder staticfiles
+STATICFILES_DIRS = (
+    BASE_DIR / 'staticfiles',
+)
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+

@@ -7,5 +7,14 @@
     {{ form.as_p }}
     <button type="submit">Register</button>
   </form>
+
+  <p>
+    Already have an account? <a href="{% url 'login' %}">Login here</a>.
+  </p>
+
+  <p>
+    Forgot your password? <a href="{% url 'password_reset' %}">Click here to reset it</a>.
+  </p>
 {% endblock %}
+
 

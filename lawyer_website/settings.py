@@ -26,7 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'lawyer_website.lawyers',
     'lawyer_website.main_data',
+    'lawyer_website.news',
+    'lawyer_website.services',
 ]
 
 MIDDLEWARE = [

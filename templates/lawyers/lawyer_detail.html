@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>{{ lawyer.first_name }} {{ lawyer.last_name }}</h2>
+  <p><strong>Position:</strong> {{ lawyer.position }}</p>
+  <p>{{ lawyer.bio }}</p>
+  {% if lawyer.photo %}
+    <img src="{{ lawyer.photo.url }}" alt="{{ lawyer.first_name }} {{ lawyer.last_name }}">
+  {% endif %}
+  <p><strong>Email:</strong> <a href="mailto:{{ lawyer.email }}">{{ lawyer.email }}</a></p>
+{% endblock %}
+
+

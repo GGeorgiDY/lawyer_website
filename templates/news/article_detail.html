@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>{{ article.title }}</h2>
+  <p>{{ article.content }}</p>
+  <p>Published on {{ article.published_at }}</p>
+
+  <h3>Comments</h3>
+  <ul>
+    {% for comment in article.comments.all %}
+      <li>{{ comment.text }} - by {{ comment.user.email }} on {{ comment.created_at }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+

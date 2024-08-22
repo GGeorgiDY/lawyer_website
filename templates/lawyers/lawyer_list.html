@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Our Lawyers</h2>
+  <ul>
+    {% for lawyer in lawyers %}
+      <li>
+        <a href="{% url 'lawyer_detail' lawyer.pk %}">
+          {{ lawyer.first_name }} {{ lawyer.last_name }} - {{ lawyer.position }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+

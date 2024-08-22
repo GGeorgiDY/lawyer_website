@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>News</h2>
+  <ul>
+    {% for article in articles %}
+      <li>
+        <a href="{% url 'article_detail' article.pk %}">
+          {{ article.title }} - {{ article.published_at }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+
+

@@ -1,29 +1,38 @@
-{% extends "base_generic.html" %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 
 {% block content %}
-  <div class="container mt-5">
-    <div class="jumbotron text-center">
+  <section class="hero">
+    <div class="hero-content">
       <h1>Welcome to [Law Firm Name]</h1>
       <p>Providing expert legal services for [Your Areas of Practice]</p>
-      <a href="{% url 'about' %}" class="btn btn-primary btn-lg">Learn More About Us</a>
+      <a href="{% url 'about' %}" class="button">Learn More About Us</a>
     </div>
+  </section>
 
-    <div class="row mt-5">
-      <div class="col-md-4">
-        <h3>Our Lawyers</h3>
-        <p>Meet our experienced legal team, dedicated to providing top-notch legal advice and representation.</p>
-        <a href="{% url 'lawyer_list' %}" class="btn btn-secondary">View Lawyers</a>
-      </div>
-      <div class="col-md-4">
-        <h3>Our Services</h3>
-        <p>We specialize in [Your Specializations]. Discover how we can assist with your legal needs.</p>
-        <a href="{% url 'service_list' %}" class="btn btn-secondary">View Services</a>
-      </div>
-      <div class="col-md-4">
-        <h3>News & Insights</h3>
-        <p>Stay up to date with the latest legal news and insights from our team of experts.</p>
-        <a href="{% url 'article_list' %}" class="btn btn-secondary">Read News</a>
-      </div>
+  <section class="info-section">
+    <div class="info-box">
+      <h3>Our Lawyers</h3>
+      <p>Meet our experienced legal team, dedicated to providing top-notch legal advice and representation.</p>
+      <a href="{% url 'lawyer_list' %}" class="button secondary">View Lawyers</a>
     </div>
-  </div>
+    <div class="info-box">
+      <h3>Our Services</h3>
+      <p>We specialize in [Your Specializations]. Discover how we can assist with your legal needs.</p>
+      <a href="{% url 'service_list' %}" class="button secondary">View Services</a>
+    </div>
+    <div class="info-box">
+      <h3>News & Insights</h3>
+      <p>Stay up to date with the latest legal news and insights from our team of experts.</p>
+      <a href="{% url 'article_list' %}" class="button secondary">Read News</a>
+    </div>
+  </section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/home.js' %}"></script>
 {% endblock %}

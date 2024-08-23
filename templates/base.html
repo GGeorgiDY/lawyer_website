@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Lawyer Website{% endblock %}</title>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <header class="header">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="{% url 'home' %}">Lawyer Office</a>
+            </div>
+            <nav class="navbar-menu">
+                <ul class="navbar-list">
+                    <li class="navbar-item"><a href="{% url 'about' %}">About</a></li>
+                    <li class="navbar-item"><a href="{% url 'article_list' %}">News</a></li>
+                    <li class="navbar-item"><a href="{% url 'location' %}">Location</a></li>
+                    {% if user.is_authenticated %}
+                        <li class="navbar-item"><a href="{% url 'profile' %}">Profile</a></li>
+                        <li class="navbar-item"><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                        <li class="navbar-item"><a href="{% url 'login' %}">Login</a></li>
+                        <li class="navbar-item"><a href="{% url 'register' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 [Law Firm Name]. All rights reserved.</p>
+            <p>
+                <a href="mailto:info@lawfirm.com">info@lawfirm.com</a> |
+                <a href="tel:+1234567890">+1 (234) 567-890</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Common JavaScript -->
+    <script src="{% static 'js/base.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

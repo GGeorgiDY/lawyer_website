@@ -9,33 +9,38 @@ body {
     color: #333;
     background-color: #f8f8f8;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .header {
     background-color: #333;
     color: white;
-    padding: 20px;
+    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Distributes space between logo and menu */
     align-items: center;
+    padding: 0 40px; /* Adds padding to the sides to push content closer to edges */
 }
 
 .navbar-logo a {
     color: white;
     font-size: 1.8em;
     text-decoration: none;
+    flex-shrink: 0; /* Prevents logo from shrinking */
 }
 
 .navbar-menu {
     display: flex;
+    justify-content: flex-end; /* Aligns the menu to the right */
+    flex-grow: 1; /* Takes up the remaining space */
 }
 
 .navbar-list {
@@ -59,6 +64,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    flex-grow: 1; /* Makes the main content grow to fill available space */
 }
 
 .footer {
@@ -66,7 +72,7 @@ body {
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 40px;
+    margin-top: auto; /* Pushes the footer to the bottom of the page */
 }
 
 .footer a {
@@ -76,4 +82,8 @@ body {
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+.footer p {
+    margin: 10px 0;
 }

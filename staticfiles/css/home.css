@@ -10,11 +10,13 @@
 .hero-content h1 {
     font-size: 3em;
     margin-bottom: 20px;
+    color: green;
 }
 
 .hero-content p {
     font-size: 1.5em;
     margin-bottom: 20px;
+    color: green;
 }
 
 .button {

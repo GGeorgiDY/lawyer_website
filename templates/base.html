@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
     <header class="header">
         <div class="navbar-container">
@@ -34,16 +34,16 @@
         </div>
     </header>
 
-    <main class="main-content">
+    <main class="main-content flex-grow-1">
         {% block content %}{% endblock %}
     </main>
 
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2024 [Law Firm Name]. All rights reserved.</p>
+            <p>&copy; 2024 Yordan Yordanov Lawyer Office. All rights reserved.</p>
             <p>
-                <a href="mailto:info@lawfirm.com">info@lawfirm.com</a> |
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                <a href="mailto:yordan.lawyer@gmail.com">yordan.lawyer@gmail.com</a> |
+                <a href="tel:+359894486688">+359 894 48 66 88</a>
             </p>
         </div>
     </footer>

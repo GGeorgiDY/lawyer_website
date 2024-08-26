@@ -8,7 +8,7 @@
 {% block content %}
     <section class="hero">
       <div class="hero-content">
-        <h1 id="welcome-message">Legal house “Yordan Yordanov”</h1>
+        <h1 id="welcome-message">Legal house 'Yordan Yordanov'</h1>
         <p id="services-description">Providing expert legal services</p>
         <a href="{% url 'about' %}" class="button" id="learn-more-button">Learn More About Us</a>
       </div>
@@ -34,5 +34,6 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'js/home.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+    <script src="{% static 'js/language-switcher.js' %}"></script>
 {% endblock %}

@@ -12,20 +12,7 @@ function updateLanguage(lang) {
         document.getElementById('news-link').textContent = translations[lang].news;
         document.getElementById('location-link').textContent = translations[lang].location;
 
-        // Update static text on the homepage
-        document.getElementById('welcome-message').textContent = translations[lang].welcome_message;
-        document.getElementById('services-description').textContent = translations[lang].services_description;
-        document.getElementById('learn-more-button').textContent = translations[lang].learn_more;
-        document.getElementById('our-lawyers-title').textContent = translations[lang].our_lawyers;
-        document.getElementById('our-lawyers-description').textContent = translations[lang].our_lawyers_description;
-        document.getElementById('view-lawyers-button').textContent = translations[lang].view_lawyers;
-        document.getElementById('our-services-title').textContent = translations[lang].our_services;
-        document.getElementById('our-services-description').textContent = translations[lang].our_services_description;
-        document.getElementById('view-services-button').textContent = translations[lang].view_services;
-        document.getElementById('news-insights-title').textContent = translations[lang].news_insights;
-        document.getElementById('news-insights-description').textContent = translations[lang].news_insights_description;
-        document.getElementById('read-news-button').textContent = translations[lang].read_news;
-
+        // Update login/logout links if they exist
         const profileLink = document.getElementById('profile-link');
         const logoutLink = document.getElementById('logout-link');
         const loginLink = document.getElementById('login-link');
@@ -36,12 +23,49 @@ function updateLanguage(lang) {
         if (loginLink) loginLink.textContent = translations[lang].login;
         if (registerLink) registerLink.textContent = translations[lang].register;
 
+        // Update static text on the homepage if the elements exist
+        if (document.getElementById('welcome-message')) {
+            document.getElementById('welcome-message').textContent = translations[lang].welcome_message;
+        }
+        if (document.getElementById('services-description')) {
+            document.getElementById('services-description').textContent = translations[lang].services_description;
+        }
+        if (document.getElementById('learn-more-button')) {
+            document.getElementById('learn-more-button').textContent = translations[lang].learn_more;
+        }
+        if (document.getElementById('our-lawyers-title')) {
+            document.getElementById('our-lawyers-title').textContent = translations[lang].our_lawyers;
+        }
+        if (document.getElementById('our-lawyers-description')) {
+            document.getElementById('our-lawyers-description').textContent = translations[lang].our_lawyers_description;
+        }
+        if (document.getElementById('view-lawyers-button')) {
+            document.getElementById('view-lawyers-button').textContent = translations[lang].view_lawyers;
+        }
+        if (document.getElementById('our-services-title')) {
+            document.getElementById('our-services-title').textContent = translations[lang].our_services;
+        }
+        if (document.getElementById('our-services-description')) {
+            document.getElementById('our-services-description').textContent = translations[lang].our_services_description;
+        }
+        if (document.getElementById('view-services-button')) {
+            document.getElementById('view-services-button').textContent = translations[lang].view_services;
+        }
+        if (document.getElementById('news-insights-title')) {
+            document.getElementById('news-insights-title').textContent = translations[lang].news_insights;
+        }
+        if (document.getElementById('news-insights-description')) {
+            document.getElementById('news-insights-description').textContent = translations[lang].news_insights_description;
+        }
+        if (document.getElementById('read-news-button')) {
+            document.getElementById('read-news-button').textContent = translations[lang].read_news;
+        }
+
         console.log("Language updated successfully");
     } else {
         console.error(`Translations for language '${lang}' not found.`);
     }
 }
-
 
 // Function to toggle language and update localStorage
 function toggleLanguage() {
@@ -69,7 +93,6 @@ function loadTranslations() {
         .catch(error => console.error('Error fetching translations:', error));
 }
 
-
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', function() {
     loadTranslations(); // Load translations from the Django view
@@ -80,3 +103,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Add event listener to the language switcher button
 document.getElementById('language-switcher').addEventListener('click', toggleLanguage);
+
+

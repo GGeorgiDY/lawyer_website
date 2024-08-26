@@ -1,21 +1,52 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
 
 {% block content %}
-  <div class="container mt-5">
+<div class="profile-container">
     <h2 class="text-center">My Profile</h2>
 
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <form method="post" class="bg-light p-4 rounded">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit" class="btn btn-success btn-block">Update Profile</button>
-        </form>
-
-        <div class="mt-4 text-center">
-          <a href="{% url 'change_password' %}" class="btn btn-warning">Change Password</a>
-        </div>
-      </div>
+    <!-- Display Success Message -->
+    {% if messages %}
+    <div class="form-success">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
     </div>
-  </div>
+    {% endif %}
+
+    <!-- Display Form Errors -->
+    {% if form.errors %}
+    <div class="form-errors">
+        <ul>
+        {% for field in form %}
+            {% for error in field.errors %}
+                <li>{{ field.label }}: {{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <div class="form-wrapper">
+        <form method="post" class="profile-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div id="update-button">
+                <button type="submit" class="btn-submit">Update Profile</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="buttons-container">
+        <a href="{% url 'change_password' %}" class="btn-password-change">Change Password</a>
+    </div>
+</div>
 {% endblock %}

@@ -156,3 +156,8 @@ body {
 .footer p {
     margin: 10px 0;
 }
+
+.container {
+    width: 100%;
+    max-width: 100%;
+}

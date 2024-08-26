@@ -1,0 +1,157 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* General styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5; /* Soft background color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling */
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Subtle gradient background */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header styling */
+.profile-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #333;
+    font-weight: 700;
+}
+
+/* Form success message styling */
+.form-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border: 1px solid #c3e6cb;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Error styling */
+.form-errors {
+    margin-bottom: 20px;
+    color: #e74c3c;
+    font-size: 0.95em;
+    background-color: #fbeaea;
+    padding: 15px;
+    border: 1px solid #e74c3c;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.form-errors ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Form styling */
+.form-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form .form-group {
+    margin-bottom: 20px;
+}
+
+.profile-form label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    color: #555;
+}
+
+.profile-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-form input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+/* Button container and button styling */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.btn-submit,
+.btn-password-change {
+    background-color: #007bff;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.btn-submit:hover,
+.btn-password-change:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.btn-password-change {
+    background-color: #ffc107;
+}
+
+.btn-password-change:hover {
+    background-color: #e0a800;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 30px;
+    }
+
+    .btn-submit,
+    .btn-password-change {
+        width: 100%;
+    }
+}
+
+.btn-submit {
+    margin-top: 20px;;
+    align-items: center;
+}
+
+#update-button {
+    text-align: center;
+}

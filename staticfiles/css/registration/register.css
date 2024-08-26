@@ -1,0 +1,112 @@
+/* Container styling */
+.registration-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Header styling */
+.registration-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registration-header h2 {
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.registration-header p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Form styling */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Error styling */
+.form-errors {
+    margin-bottom: 20px;
+    color: red;
+    font-size: 0.9em;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.form-errors ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Form Fields */
+.registration-form .form-group {
+    margin-bottom: 15px;
+}
+
+.registration-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+}
+
+.registration-form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button styling */
+.btn-submit {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Footer links styling */
+.registration-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.registration-footer p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.registration-footer a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.registration-footer a:hover {
+    color: #0056b3;
+}

@@ -1,19 +1,42 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-
-  <p>
-    <a href="{% url 'password_reset' %}">Forgot your password?</a>
-  </p>
-
-  <p>
-    Don't have an account? <a href="{% url 'register' %}">Register here</a>.
-  </p>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/registration/login.css' %}">
 {% endblock %}
 
+{% block content %}
+<div class="login-container">
+    <div class="login-header">
+        <h2>Login to Your Account</h2>
+        <p>Access your account to manage your legal services and profile.</p>
+    </div>
+
+    <!-- Display Form Errors -->
+    {% if form.errors %}
+    <div class="form-errors">
+        <ul>
+        {% for field in form %}
+            {% for error in field.errors %}
+                <li>{{ field.label }}: {{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <form method="post" class="login-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-submit">Login</button>
+    </form>
+
+    <div class="login-footer">
+        <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
+    </div>
+</div>
+{% endblock %}

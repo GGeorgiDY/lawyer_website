@@ -6,30 +6,33 @@
 {% endblock %}
 
 {% block content %}
-    <section class="hero">
-      <div class="hero-content">
-        <h1 id="welcome-message">Legal house 'Yordan Yordanov'</h1>
-        <p id="services-description">Providing expert legal services</p>
-        <a href="{% url 'about' %}" class="button" id="learn-more-button">Learn More About Us</a>
-      </div>
+    <section class="hero full-width">
+        <div class="hero-image-container">
+            <img src="{% static 'images/flags/темида2.png' %}" alt="Hero Image" class="hero-image">
+        </div>
+        <div class="hero-content">
+            <h1 id="welcome-message">Legal house 'Yordan Yordanov'</h1>
+            <p id="services-description">Providing expert legal services</p>
+            <a href="{% url 'about' %}" class="button" id="learn-more-button">Learn More About Us</a>
+        </div>
     </section>
 
     <section class="info-section">
-      <div class="info-box">
-        <h3 id="our-lawyers-title">Our Lawyers</h3>
-        <p id="our-lawyers-description">Meet our experienced legal team, dedicated to providing top-notch legal advice and representation.</p>
-        <a href="{% url 'lawyer_list' %}" class="button secondary" id="view-lawyers-button">View Lawyers</a>
-      </div>
-      <div class="info-box">
-        <h3 id="our-services-title">Our Services</h3>
-        <p id="our-services-description">We specialize in [Your Specializations]. Discover how we can assist with your legal needs.</p>
-        <a href="{% url 'service_list' %}" class="button secondary" id="view-services-button">View Services</a>
-      </div>
-      <div class="info-box">
-        <h3 id="news-insights-title">News & Insights</h3>
-        <p id="news-insights-description">Stay up to date with the latest legal news and insights from our team of experts.</p>
-        <a href="{% url 'article_list' %}" class="button secondary" id="read-news-button">Read News</a>
-      </div>
+        <div class="info-box">
+            <h3 id="our-lawyers-title">Our Lawyers</h3>
+            <p id="our-lawyers-description">Meet our experienced legal team, dedicated to providing top-notch legal advice and representation.</p>
+            <a href="{% url 'lawyer_list' %}" class="button secondary" id="view-lawyers-button">View Lawyers</a>
+        </div>
+        <div class="info-box">
+            <h3 id="our-services-title">Our Services</h3>
+            <p id="our-services-description">We specialize in [Your Specializations]. Discover how we can assist with your legal needs.</p>
+            <a href="{% url 'service_list' %}" class="button secondary" id="view-services-button">View Services</a>
+        </div>
+        <div class="info-box">
+            <h3 id="news-insights-title">News & Insights</h3>
+            <p id="news-insights-description">Stay up to date with the latest legal news and insights from our team of experts.</p>
+            <a href="{% url 'article_list' %}" class="button secondary" id="read-news-button">Read News</a>
+        </div>
     </section>
 {% endblock %}
 

@@ -1,10 +1,34 @@
 .hero {
-    background-image: url('{% static "images/hero.jpg" %}');
-    background-size: cover;
-    background-position: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    position: relative;
+}
+
+.hero-image-container {
+    width: 100vw;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    top: 35%;
+    right: 100px; /* Align content to the right */
+    transform: translateY(-50%);
+    text-align: right; /* Align text to the right */
     color: white;
-    text-align: center;
-    padding: 100px 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for better readability */
+    padding: 20px;
 }
 
 .hero-content h1 {

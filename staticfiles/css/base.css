@@ -104,29 +104,6 @@ body {
     color: #ffcc00;
 }
 
-/*!* Language Switcher Button *!*/
-/*.language-switcher-btn {*/
-/*    background-color: #ffcc00;  !* Button background color *!*/
-/*    color: #333;  !* Button text color *!*/
-/*    border: none;*/
-/*    border-radius: 50%;  !* Make it circular *!*/
-/*    width: 40px;  !* Define width and height to create a circle *!*/
-/*    height: 40px;*/
-/*    font-size: 1em;*/
-/*    cursor: pointer;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    transition: background-color 0.3s, transform 0.3s;  !* Add transition for hover effect *!*/
-/*    margin-left: 5px;  !* Add space between the language switcher and logout button *!*/
-/*}*/
-
-/*.language-switcher-btn:hover {*/
-/*    background-color: #333;  !* Change background color on hover *!*/
-/*    color: #ffcc00;  !* Invert text color on hover *!*/
-/*    transform: scale(1.1);  !* Slightly enlarge the button on hover *!*/
-/*}*/
-
 /* Language Switcher Styling */
 .language-switcher-container {
     display: flex;
@@ -149,10 +126,10 @@ body {
 
 /* Main Content */
 .main-content {
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     margin: 0 auto;
-    padding: 20px;
-    flex-grow: 1;
+    /*padding: 20px;*/
+    /*flex-grow: 1;*/
 }
 
 /* Footer Styles */

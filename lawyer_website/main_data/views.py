@@ -6,6 +6,33 @@ from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm, CustomAuthenticationForm, CustomPasswordChangeForm, ProfileForm
 from django.contrib import messages
 
+import json
+import os
+from django.http import JsonResponse
+from django.conf import settings
+
+
+def get_translations(request):
+    # Construct the path to the translations.json file
+    translations_file_path = os.path.join(settings.BASE_DIR, 'lawyer_website', 'main_data', 'translations.json')
+
+    # Debugging output
+    print(f"Looking for translations at: {translations_file_path}")
+
+    if not os.path.exists(translations_file_path):
+        print("Translations file not found")
+        return JsonResponse({'error': 'Translations file not found'}, status=404)
+
+    try:
+        with open(translations_file_path, 'r', encoding='utf-8') as json_file:
+            translations = json.load(json_file)
+            print("Translations loaded successfully")
+    except Exception as e:
+        print(f"Error loading translations: {e}")
+        return JsonResponse({'error': str(e)}, status=500)
+
+    return JsonResponse(translations)
+
 
 def home(request):
     return render(request, 'home.html')

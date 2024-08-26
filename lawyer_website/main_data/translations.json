@@ -1,0 +1,22 @@
+{
+  "en": {
+    "home": "Home",
+    "about": "About",
+    "news": "News",
+    "location": "Location",
+    "profile": "Profile",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register"
+  },
+  "bg": {
+    "home": "Начало",
+    "about": "За нас",
+    "news": "Новини",
+    "location": "Местоположение",
+    "profile": "Профил",
+    "logout": "Изход",
+    "login": "Вход",
+    "register": "Регистрация"
+  }
+}

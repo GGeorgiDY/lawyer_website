@@ -39,18 +39,21 @@
             </div>
             <nav class="navbar-menu">
                 <ul class="navbar-list">
-                    <li class="navbar-item"><a href="{% url 'about' %}">About</a></li>
-                    <li class="navbar-item"><a href="{% url 'article_list' %}">News</a></li>
-                    <li class="navbar-item"><a href="{% url 'location' %}">Location</a></li>
+                    <li class="navbar-item"><a href="{% url 'home' %}" id="home-link">Home</a></li>
+                    <li class="navbar-item"><a href="{% url 'about' %}" id="about-link">About</a></li>
+                    <li class="navbar-item"><a href="{% url 'article_list' %}" id="news-link">News</a></li>
+                    <li class="navbar-item"><a href="{% url 'location' %}" id="location-link">Location</a></li>
                     {% if user.is_authenticated %}
-                        <li class="navbar-item"><a href="{% url 'profile' %}">Profile</a></li>
-                        <li class="navbar-item"><a href="{% url 'logout' %}">Logout</a></li>
+                        <li class="navbar-item"><a href="{% url 'profile' %}" id="profile-link">Profile</a></li>
+                        <li class="navbar-item"><a href="{% url 'logout' %}" id="logout-link">Logout</a></li>
                     {% else %}
-                        <li class="navbar-item"><a href="{% url 'login' %}">Login</a></li>
-                        <li class="navbar-item"><a href="{% url 'register' %}">Register</a></li>
+                        <li class="navbar-item"><a href="{% url 'login' %}" id="login-link">Login</a></li>
+                        <li class="navbar-item"><a href="{% url 'register' %}" id="register-link">Register</a></li>
                     {% endif %}
                 </ul>
             </nav>
+            <!-- Language Switcher Button -->
+            <button id="language-switcher" class="language-switcher-btn">EN</button>
         </div>
     </header>
 
@@ -70,7 +73,7 @@
 
     <!-- Common JavaScript -->
     <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/language-switcher.js' %}"></script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>
-    

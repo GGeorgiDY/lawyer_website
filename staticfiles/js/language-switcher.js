@@ -6,6 +6,12 @@ function updateLanguage(lang) {
     console.log("Updating language to:", lang);
 
     if (translations[lang]) {
+        // Your existing code to update the page content based on language
+    } else {
+        console.error(`Translations for language '${lang}' not found.`);
+    }
+
+    if (translations[lang]) {
         // Update menu links
         document.getElementById('home-link').textContent = translations[lang].home;
         document.getElementById('about-link').textContent = translations[lang].about;
@@ -67,41 +73,86 @@ function updateLanguage(lang) {
     }
 }
 
+// // Function to toggle language and update localStorage
+// function toggleLanguage() {
+//     currentLanguage = currentLanguage === 'en' ? 'bg' : 'en';
+//     localStorage.setItem('selectedLanguage', currentLanguage);
+//     document.getElementById('language-switcher').textContent = currentLanguage === 'en' ? 'BG' : 'EN';
+//     updateLanguage(currentLanguage);
+// }
+//
+// // Function to load translations from Django view
+// function loadTranslations() {
+//     fetch('/translations/')
+//         .then(response => {
+//             console.log("Fetch response status:", response.status);  // Log status code
+//             if (!response.ok) {
+//                 throw new Error('Network response was not ok');
+//             }
+//             return response.json();
+//         })
+//         .then(data => {
+//             console.log("Fetched translations data:", data);  // Log the fetched data
+//             translations = data;
+//             updateLanguage(currentLanguage);
+//         })
+//         .catch(error => console.error('Error fetching translations:', error));
+// }
+//
+// // Initialize page on load
+// document.addEventListener('DOMContentLoaded', function() {
+//     loadTranslations(); // Load translations from the Django view
+//
+//     // Set the button text based on the current language
+//     document.getElementById('language-switcher').textContent = currentLanguage === 'en' ? 'BG' : 'EN';
+// });
+//
+// // Add event listener to the language switcher button
+// document.getElementById('language-switcher').addEventListener('click', toggleLanguage);
+
+
+
+
+
 // Function to toggle language and update localStorage
-function toggleLanguage() {
-    currentLanguage = currentLanguage === 'en' ? 'bg' : 'en';
+function switchLanguage(lang) {
+    currentLanguage = lang;
     localStorage.setItem('selectedLanguage', currentLanguage);
-    document.getElementById('language-switcher').textContent = currentLanguage === 'en' ? 'BG' : 'EN';
     updateLanguage(currentLanguage);
+
+    // Toggle the visibility of the flags
+    if (currentLanguage === 'en') {
+        document.getElementById('flag-en').style.display = 'block';
+        document.getElementById('flag-bg').style.display = 'none';
+    } else {
+        document.getElementById('flag-en').style.display = 'none';
+        document.getElementById('flag-bg').style.display = 'block';
+    }
 }
 
 // Function to load translations from Django view
 function loadTranslations() {
     fetch('/translations/')
-        .then(response => {
-            console.log("Fetch response status:", response.status);  // Log status code
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
-            console.log("Fetched translations data:", data);  // Log the fetched data
             translations = data;
             updateLanguage(currentLanguage);
+            // Set the correct initial flag visibility based on the stored language
+            switchLanguage(currentLanguage);
         })
         .catch(error => console.error('Error fetching translations:', error));
 }
 
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', function() {
-    loadTranslations(); // Load translations from the Django view
+    loadTranslations();
 
-    // Set the button text based on the current language
-    document.getElementById('language-switcher').textContent = currentLanguage === 'en' ? 'BG' : 'EN';
+    // Add click event listeners to the flag images
+    document.getElementById('flag-en').addEventListener('click', function() {
+        switchLanguage('bg'); // Switch to Bulgarian
+    });
+
+    document.getElementById('flag-bg').addEventListener('click', function() {
+        switchLanguage('en'); // Switch to English
+    });
 });
-
-// Add event listener to the language switcher button
-document.getElementById('language-switcher').addEventListener('click', toggleLanguage);
-
-

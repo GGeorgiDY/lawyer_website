@@ -53,7 +53,12 @@
                 </ul>
             </nav>
             <!-- Language Switcher Button -->
-            <button id="language-switcher" class="language-switcher-btn">EN</button>
+{#            <button id="language-switcher" class="language-switcher-btn">EN</button>#}
+
+            <div id="language-switcher" class="language-switcher-container">
+                <img src="{% static 'images/flags/en.png' %}" alt="English" id="flag-en" class="language-flag">
+                <img src="{% static 'images/flags/bg.png' %}" alt="Bulgarian" id="flag-bg" class="language-flag" style="display: none;">
+            </div>
         </div>
     </header>
 

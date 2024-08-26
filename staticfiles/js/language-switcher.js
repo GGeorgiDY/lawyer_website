@@ -3,13 +3,28 @@ let translations = {}; // This will hold the loaded translations
 
 // Function to update text content based on selected language
 function updateLanguage(lang) {
-    console.log("Updating language to:", lang);  // Debugging
+    console.log("Updating language to:", lang);
 
     if (translations[lang]) {
+        // Update menu links
         document.getElementById('home-link').textContent = translations[lang].home;
         document.getElementById('about-link').textContent = translations[lang].about;
         document.getElementById('news-link').textContent = translations[lang].news;
         document.getElementById('location-link').textContent = translations[lang].location;
+
+        // Update static text on the homepage
+        document.getElementById('welcome-message').textContent = translations[lang].welcome_message;
+        document.getElementById('services-description').textContent = translations[lang].services_description;
+        document.getElementById('learn-more-button').textContent = translations[lang].learn_more;
+        document.getElementById('our-lawyers-title').textContent = translations[lang].our_lawyers;
+        document.getElementById('our-lawyers-description').textContent = translations[lang].our_lawyers_description;
+        document.getElementById('view-lawyers-button').textContent = translations[lang].view_lawyers;
+        document.getElementById('our-services-title').textContent = translations[lang].our_services;
+        document.getElementById('our-services-description').textContent = translations[lang].our_services_description;
+        document.getElementById('view-services-button').textContent = translations[lang].view_services;
+        document.getElementById('news-insights-title').textContent = translations[lang].news_insights;
+        document.getElementById('news-insights-description').textContent = translations[lang].news_insights_description;
+        document.getElementById('read-news-button').textContent = translations[lang].read_news;
 
         const profileLink = document.getElementById('profile-link');
         const logoutLink = document.getElementById('logout-link');
@@ -21,11 +36,12 @@ function updateLanguage(lang) {
         if (loginLink) loginLink.textContent = translations[lang].login;
         if (registerLink) registerLink.textContent = translations[lang].register;
 
-        console.log("Language updated successfully");  // Debugging
+        console.log("Language updated successfully");
     } else {
         console.error(`Translations for language '${lang}' not found.`);
     }
 }
+
 
 // Function to toggle language and update localStorage
 function toggleLanguage() {

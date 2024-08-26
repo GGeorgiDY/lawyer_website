@@ -7,7 +7,19 @@
     "profile": "Profile",
     "logout": "Logout",
     "login": "Login",
-    "register": "Register"
+    "register": "Register",
+    "welcome_message": "Legal house 'Yordan Yordanov'",
+    "services_description": "Providing expert legal services",
+    "learn_more": "Learn More About Us",
+    "our_lawyers": "Our Lawyers",
+    "our_lawyers_description": "Meet our experienced legal team, dedicated to providing top-notch legal advice and representation.",
+    "view_lawyers": "View Lawyers",
+    "our_services": "Our Services",
+    "our_services_description": "We specialize in [Your Specializations]. Discover how we can assist with your legal needs.",
+    "view_services": "View Services",
+    "news_insights": "News & Insights",
+    "news_insights_description": "Stay up to date with the latest legal news and insights from our team of experts.",
+    "read_news": "Read News"
   },
   "bg": {
     "home": "Начало",
@@ -17,6 +29,18 @@
     "profile": "Профил",
     "logout": "Изход",
     "login": "Вход",
-    "register": "Регистрация"
+    "register": "Регистрация",
+    "welcome_message": "Адвокатска кантора 'Йордан Йорданов'",
+    "services_description": "Предоставяне на експертни правни услуги",
+    "learn_more": "Научете повече за нас",
+    "our_lawyers": "Нашите адвокати",
+    "our_lawyers_description": "Запознайте се с нашия опитен правен екип, посветен на предоставянето на качествени правни съвети и представителство.",
+    "view_lawyers": "Виж адвокати",
+    "our_services": "Нашите услуги",
+    "our_services_description": "Ние се специализираме в [Вашите специализации]. Разберете как можем да ви помогнем с вашите правни нужди.",
+    "view_services": "Виж услуги",
+    "news_insights": "Новини и анализи",
+    "news_insights_description": "Бъдете в крак с последните правни новини и анализи от нашия екип експерти.",
+    "read_news": "Прочети новини"
   }
 }

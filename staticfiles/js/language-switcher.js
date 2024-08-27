@@ -67,6 +67,21 @@ function updateLanguage(lang) {
             document.getElementById('read-news-button').textContent = translations[lang].read_news;
         }
 
+
+        // location webpage
+        if (document.getElementById('location_for_direct_contacts')) {
+            document.getElementById('location_for_direct_contacts').textContent = translations[lang].location_for_direct_contacts;
+        }
+        if (document.getElementById('location_address')) {
+            document.getElementById('location_address').textContent = translations[lang].location_address;
+        }
+        if (document.getElementById('location_working_time')) {
+            document.getElementById('location_working_time').textContent = translations[lang].location_working_time;
+        }
+        if (document.getElementById('read-news-button')) {
+            document.getElementById('read-news-button').textContent = translations[lang].read_news;
+        }
+
         console.log("Language updated successfully");
     } else {
         console.error(`Translations for language '${lang}' not found.`);

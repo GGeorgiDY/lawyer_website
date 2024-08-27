@@ -11,6 +11,21 @@ import os
 from django.http import JsonResponse
 from django.conf import settings
 
+from django.http import HttpResponse
+# from .forms import ContactForm
+from .forms import CustomForm
+
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+
+from .models import CustomUser
+from .tokens import account_activation_token
+from django.utils.encoding import force_bytes, force_str
+from django.core.mail import send_mail
+from django.utils.http import urlsafe_base64_decode
+from django.contrib.auth import get_user_model
+
 
 def get_translations(request):
     # Construct the path to the translations.json file
@@ -46,13 +61,42 @@ def location(request):
     return render(request, 'location.html')
 
 
+def activate(request, uidb64, token):
+    try:
+        uid = force_str(urlsafe_base64_decode(uidb64))
+        user = get_user_model().objects.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
+        user = None
+
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+        login(request, user)
+        return redirect('home')
+    else:
+        return render(request, 'registration/activation_invalid.html')
+
+
 def register(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('home')
+            user = form.save(commit=False)
+            user.is_active = False  # Deactivate account until email confirmation
+            user.save()
+
+            # Send email confirmation
+            current_site = get_current_site(request)
+            mail_subject = 'Activate your account.'
+            message = render_to_string('registration/activation_email.html', {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
+            })
+            send_mail(mail_subject, message, 'yordan.lawyer@gmail.com', [user.email])
+
+            return render(request, 'registration/confirmation_email_sent.html')
     else:
         form = CustomUserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
@@ -100,3 +144,42 @@ def profile_view(request):
     return render(request, 'profile.html', {'form': form})
 
 
+# def contact_view(request):
+#     if request.method == "POST":
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             # Process form data here
+#             name = form.cleaned_data['name']
+#             email = form.cleaned_data['email']
+#             phone = form.cleaned_data['phone']
+#             message = form.cleaned_data['message']
+#             return HttpResponse("Message sent!")
+#     else:
+#         if request.user.is_authenticated:
+#             initial_data = {
+#                 'name': f"{request.user.first_name} {request.user.last_name}",
+#                 'email': request.user.email
+#             }
+#             form = ContactForm(initial=initial_data)
+#         else:
+#             form = ContactForm()
+#
+#     return render(request, 'location.html', {'form': form})
+
+
+def custom_view(request):
+    if request.method == "POST":
+        form = CustomForm(request.POST)
+        if form.is_valid():
+            # Process the form data here
+            header = form.cleaned_data['header']
+            text = form.cleaned_data['text']
+            # Save or process the data as needed
+            return redirect('success_url')  # Redirect to a success page or handle accordingly
+    else:
+        if request.user.is_authenticated:
+            form = CustomForm()  # Empty form for authenticated users to fill in
+        else:
+            form = None  # Form should not be displayed to unauthenticated users
+
+    return render(request, 'location.html', {'form': form})

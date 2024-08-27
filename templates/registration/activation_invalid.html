@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/registration/activation_invalid.css' %}">
+    <title>Activation Invalid</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Activation link is invalid!</h2>
+        <p>The link you used is invalid or expired. Please try to register again or contact support if you need assistance.</p>
+        <a href="{% url 'home' %}">Go to Home</a>
+    </div>
+</body>
+</html>

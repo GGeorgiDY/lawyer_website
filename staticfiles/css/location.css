@@ -1,5 +1,4 @@
 .container {
-    /*padding-top: 40px;*/
     padding-bottom: 40px;
 }
 
@@ -46,8 +45,8 @@ h3 {
 }
 
 .contact-info {
-    padding: 20px;
     background-color: #f9f9f9;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -55,4 +54,25 @@ h3 {
 .contact-info p {
     font-size: 1.2em;
     margin-bottom: 10px;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.contact-section .col-lg-6 {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-section .col-lg-6 {
+        max-width: 100%;
+    }
 }

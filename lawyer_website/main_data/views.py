@@ -1,7 +1,5 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, update_session_auth_hash
-from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm, CustomAuthenticationForm, CustomPasswordChangeForm, ProfileForm
 from django.contrib import messages
@@ -11,13 +9,11 @@ import os
 from django.http import JsonResponse
 from django.conf import settings
 
-from django.http import HttpResponse
-# from .forms import ContactForm
 from .forms import CustomForm
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.http import urlsafe_base64_encode
 
 from .models import CustomUser
 from .tokens import account_activation_token
@@ -144,42 +140,34 @@ def profile_view(request):
     return render(request, 'profile.html', {'form': form})
 
 
-# def contact_view(request):
-#     if request.method == "POST":
-#         form = ContactForm(request.POST)
-#         if form.is_valid():
-#             # Process form data here
-#             name = form.cleaned_data['name']
-#             email = form.cleaned_data['email']
-#             phone = form.cleaned_data['phone']
-#             message = form.cleaned_data['message']
-#             return HttpResponse("Message sent!")
-#     else:
-#         if request.user.is_authenticated:
-#             initial_data = {
-#                 'name': f"{request.user.first_name} {request.user.last_name}",
-#                 'email': request.user.email
-#             }
-#             form = ContactForm(initial=initial_data)
-#         else:
-#             form = ContactForm()
-#
-#     return render(request, 'location.html', {'form': form})
-
-
 def custom_view(request):
-    if request.method == "POST":
+    form = CustomForm()
+
+    if request.method == "POST" and request.user.is_authenticated:
         form = CustomForm(request.POST)
         if form.is_valid():
-            # Process the form data here
+            # Get the form data
             header = form.cleaned_data['header']
             text = form.cleaned_data['text']
-            # Save or process the data as needed
-            return redirect('success_url')  # Redirect to a success page or handle accordingly
-    else:
-        if request.user.is_authenticated:
-            form = CustomForm()  # Empty form for authenticated users to fill in
-        else:
-            form = None  # Form should not be displayed to unauthenticated users
+            user_email = request.user.email
+
+            # Send the email to the website owner
+            send_mail(
+                subject=f"New Message from {request.user.get_full_name()} - {header}",
+                message=f"Message: {text}\n\nFrom: {user_email}",
+                from_email=user_email,
+                recipient_list=['yordan.lawyer@gmail.com'],  # Owner's email
+                fail_silently=False,
+            )
+
+            # Show success message and redirect
+            messages.success(request, 'Your message has been sent successfully.')
+            return redirect('home')  # Redirect to a success page or home page
+
+    if not request.user.is_authenticated:
+        # Ensure the fields are disabled for unauthenticated users
+        form.fields['header'].widget.attrs['disabled'] = True
+        form.fields['text'].widget.attrs['disabled'] = True
 
     return render(request, 'location.html', {'form': form})
+

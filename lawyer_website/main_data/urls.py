@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LogoutView
 from django.urls import path
 from lawyer_website.main_data.views import about, home, register, user_login, change_password, profile_view, location, \
-    get_translations, activate
+    get_translations, activate, custom_view
 from django.contrib.auth import views as auth_views
 
 
@@ -24,5 +24,9 @@ urlpatterns = [
     path('translations/', get_translations, name='get_translations'),
 
     path('activate/<uidb64>/<token>/', activate, name='activate'),
+
+    path('custom_view/', custom_view, name='custom_view'),
+    path('success_url/', home, name='success_url'),  # Adjust as per your requirement
+
 ]
 

@@ -3,10 +3,11 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/location.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 {% endblock %}
 
 {% block content %}
-    <!-- Map Section -->
     <div class="row mt-5">
       <div class="col-12">
         <iframe
@@ -15,36 +16,83 @@
         </iframe>
       </div>
     </div>
+<div class="secondWrapper">
+<div class="imageDiv">
+    <div class="glassEffectDiv">
 
-    <!-- Contact Form and Information Section -->
-    <div class="row mt-5 contact-section">
-      <div class="col-lg-6 col-md-12">
-        <h3>Contact Us</h3>
-        {% if user.is_authenticated %}
-            <form method="POST" class="contact-form">
-              {% csrf_token %}
-              {{ form.header }}
-              {{ form.text }}
-              <button type="submit" class="btn btn-primary mt-4">Submit</button>
-            </form>
-        {% else %}
-            <p>Please log in to modify the form fields.</p>
-        {% endif %}
-      </div>
 
-      <div class="col-lg-6 col-md-12 contact-info">
-        <h3>Office Address</h3>
-        <p>Law Firm Name</p>
-        <p>123 Main Street, Suite 100</p>
-        <p>City, State, ZIP Code</p>
-        <p><strong>Phone:</strong> 0894 48 66 88</p>
-        <p><strong>Email:</strong> <a href="mailto:yordan.lawyer@gmail.com">yordan.lawyer@gmail.com</a></p>
+    <div class="infoWrapper">
+      <div class="col-auto">
+        <h2 style="margin-bottom: 30px">For Direct Contacts:</h2>
+
+
+        <div class="contact-box" style="width: 100%; margin-bottom: 30px">
+            <div class="info-column">
+            0883 445 516
+            <div class="contact-icon-box">
+               <i class="fas fa-phone fa-2x"></i>
+            </div>
+            </div>
+                        <div class="info-column">
+            0883 445 516
+            <div class="contact-icon-box">
+               <i class="fas fa-mail fa-2x"></i>
+            </div>
+            </div>
+                        <div class="info-column">
+            0883 445 516
+            <div class="contact-icon-box">
+               <i class="fas fa-phone fa-2x"></i>
+            </div>
+            </div>
+                        <div class="info-column">
+            0883 445 516
+            <div class="contact-icon-box">
+               <i class="fas fa-phone fa-2x"></i>
+            </div>
+            </div>
+
+        </div>
+
       </div>
     </div>
-{% endblock %}
 
+</div>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
 
 {% block extra_js %}
     <script src="{% static 'js/location.js' %}"></script>
     <script src="{% static 'js/language-switcher.js' %}"></script>
 {% endblock %}
+
+<style>
+  .contact-box {
+    width: 400px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  .contact-icon-box {
+    text-align: center;
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+
+  .row.justify-content-start {
+    flex-direction: column;
+  }
+</style>

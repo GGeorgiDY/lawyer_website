@@ -114,6 +114,7 @@ body {
 .language-switcher-container {
     display: flex;
     align-items: center;
+    margin-left: 15px;
 }
 
 .language-flag {
@@ -163,4 +164,9 @@ body {
 .container {
     width: 100%;
     max-width: 100%;
+}
+
+.navbar-item a.active {
+    color: #ffcc00;
+    font-weight: bold; /* Optional: Make the active link bold */
 }

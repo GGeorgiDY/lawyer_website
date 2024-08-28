@@ -2,51 +2,64 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-<div class="profile-container">
-    <h2 class="text-center">My Profile</h2>
+<div class="secondWrapper">
+    <div class="imageDiv">
+        <div class="glassEffectDiv">
+            <div class="profile-container">
+                <h2 class="text-center" id="profile_my_profile">My Profile</h2>
 
-    <!-- Display Success Message -->
-    {% if messages %}
-    <div class="form-success">
-        {% for message in messages %}
-        <p>{{ message }}</p>
-        {% endfor %}
-    </div>
-    {% endif %}
+                <!-- Display Success Message -->
+                {% if messages %}
+                <div class="form-success">
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
 
-    <!-- Display Form Errors -->
-    {% if form.errors %}
-    <div class="form-errors">
-        <ul>
-        {% for field in form %}
-            {% for error in field.errors %}
-                <li>{{ field.label }}: {{ error }}</li>
-            {% endfor %}
-        {% endfor %}
-        {% for error in form.non_field_errors %}
-            <li>{{ error }}</li>
-        {% endfor %}
-        </ul>
-    </div>
-    {% endif %}
+                <!-- Display Form Errors -->
+                {% if form.errors %}
+                <div class="form-errors">
+                    <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ field.label }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
 
-    <div class="form-wrapper">
-        <form method="post" class="profile-form">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div id="update-button">
-                <button type="submit" class="btn-submit">Update Profile</button>
+                <div class="form-wrapper">
+                    <form method="post" class="profile-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div id="update-button">
+                            <button type="submit" class="btn-submit" id="profile_update_profile_button">Update Profile</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="buttons-container">
+                    <a href="{% url 'change_password' %}" class="btn-password-change" id="profile_change_password_button">Change Password</a>
+                </div>
             </div>
-
-        </form>
-    </div>
-
-    <div class="buttons-container">
-        <a href="{% url 'change_password' %}" class="btn-password-change">Change Password</a>
+        </div>
     </div>
 </div>
 {% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/profile.js' %}"></script>
+    <script src="{% static 'js/language-switcher.js' %}"></script>
+{% endblock %}
+

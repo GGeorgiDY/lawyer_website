@@ -78,8 +78,17 @@ function updateLanguage(lang) {
         if (document.getElementById('location_working_time')) {
             document.getElementById('location_working_time').textContent = translations[lang].location_working_time;
         }
-        if (document.getElementById('read-news-button')) {
-            document.getElementById('read-news-button').textContent = translations[lang].read_news;
+
+
+        // profile page
+        if (document.getElementById('profile_my_profile')) {
+            document.getElementById('profile_my_profile').textContent = translations[lang].profile_my_profile;
+        }
+        if (document.getElementById('profile_update_profile_button')) {
+            document.getElementById('profile_update_profile_button').textContent = translations[lang].profile_update_profile_button;
+        }
+        if (document.getElementById('profile_change_password_button')) {
+            document.getElementById('profile_change_password_button').textContent = translations[lang].profile_change_password_button;
         }
 
         console.log("Language updated successfully");

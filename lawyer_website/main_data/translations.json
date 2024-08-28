@@ -23,7 +23,11 @@
 
     "location_for_direct_contacts": "For Direct Contacts:",
     "location_address": "City of Sofia, 1 Vitosha Str",
-    "location_working_time": "Mon. - Fri. 09:00-18:00"
+    "location_working_time": "Mon. - Fri. 09:00-18:00",
+
+    "profile_my_profile": "My Profile",
+    "profile_update_profile_button": "Update Profile",
+    "profile_change_password_button": "Change Password"
   },
   "bg": {
     "home": "Начало",
@@ -49,6 +53,10 @@
 
     "location_for_direct_contacts": "За директни контакти:",
     "location_address": "гр. София, ул. Витоша №1",
-    "location_working_time": "Пон. - Пет. 09:00-18:00"
+    "location_working_time": "Пон. - Пет. 09:00-18:00",
+
+    "profile_my_profile": "Моят Профил",
+    "profile_update_profile_button": "Актуализиране на Профила",
+    "profile_change_password_button": "Промени Парола"
   }
 }

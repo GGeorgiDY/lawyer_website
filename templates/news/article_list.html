@@ -1,17 +1,24 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
-  <h2>News</h2>
-  <ul>
-    {% for article in articles %}
-      <li>
-        <a href="{% url 'article_detail' article.pk %}">
-          {{ article.title }} - {{ article.published_at }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/article/article_list.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 {% endblock %}
 
 
+{% block content %}
+    <div class="secondWrapper">
+        <div class="imageDiv">
+            <div class="glassEffectDiv">
 
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block extra_js %}
+    <script src="{% static 'js/article/article_list.js' %}"></script>
+    <script src="{% static 'js/language-switcher.js' %}"></script>
+{% endblock %}

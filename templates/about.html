@@ -1,9 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}About Us - My Website{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+{% endblock %}
+
 
 {% block content %}
-    <h1>About Us</h1>
-    <p>This is the about page. Learn more about us here.</p>
+    <div class="secondWrapper">
+        <div class="imageDiv">
+            <div class="glassEffectDiv">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block extra_js %}
+    <script src="{% static 'js/about.js' %}"></script>
+    <script src="{% static 'js/language-switcher.js' %}"></script>
 {% endblock %}
 

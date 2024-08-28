@@ -1,0 +1,29 @@
+/*for creating a font at the background, which will have a glass effect*/
+.secondWrapper {
+    width: 100%;
+    display: flex;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.imageDiv {
+    background-image: url('../../images/flags/темида2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.glassEffectDiv {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 39, 39, 0.29);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+    padding: 40px 40px;
+}

@@ -3,7 +3,7 @@
     "home": "Home",
     "about": "About",
     "news": "News",
-    "location": "Location",
+    "contacts": "Contacts",
     "profile": "Profile",
     "logout": "Logout",
     "login": "Login",
@@ -21,9 +21,9 @@
     "news_insights_description": "Stay up to date with the latest legal news and insights from our team of experts.",
     "read_news": "Read News",
 
-    "location_for_direct_contacts": "For Direct Contacts:",
-    "location_address": "City of Sofia, 1 Vitosha Str",
-    "location_working_time": "Mon. - Fri. 09:00-18:00",
+    "contacts_for_direct_contacts": "For Direct Contacts:",
+    "contacts_address": "City of Sofia, 1 Vitosha Str",
+    "contacts_working_time": "Mon. - Fri. 09:00-18:00",
 
     "profile_my_profile": "My Profile",
     "profile_update_profile_button": "Update Profile",
@@ -33,7 +33,7 @@
     "home": "Начало",
     "about": "За нас",
     "news": "Новини",
-    "location": "Местоположение",
+    "contacts": "Контакти",
     "profile": "Профил",
     "logout": "Изход",
     "login": "Вход",
@@ -51,9 +51,9 @@
     "news_insights_description": "Бъдете в крак с последните правни новини и анализи от нашия екип експерти.",
     "read_news": "Прочети новини",
 
-    "location_for_direct_contacts": "За директни контакти:",
-    "location_address": "гр. София, ул. Витоша №1",
-    "location_working_time": "Пон. - Пет. 09:00-18:00",
+    "contacts_for_direct_contacts": "За директни контакти:",
+    "contacts_address": "гр. София, ул. Витоша №1",
+    "contacts_working_time": "Пон. - Пет. 09:00-18:00",
 
     "profile_my_profile": "Моят Профил",
     "profile_update_profile_button": "Актуализиране на Профила",

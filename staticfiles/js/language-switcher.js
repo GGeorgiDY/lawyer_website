@@ -16,7 +16,7 @@ function updateLanguage(lang) {
         document.getElementById('home-link').textContent = translations[lang].home;
         document.getElementById('about-link').textContent = translations[lang].about;
         document.getElementById('news-link').textContent = translations[lang].news;
-        document.getElementById('location-link').textContent = translations[lang].location;
+        document.getElementById('contacts-link').textContent = translations[lang].contacts;
 
         // Update login/logout links if they exist
         const profileLink = document.getElementById('profile-link');
@@ -68,15 +68,15 @@ function updateLanguage(lang) {
         }
 
 
-        // location webpage
-        if (document.getElementById('location_for_direct_contacts')) {
-            document.getElementById('location_for_direct_contacts').textContent = translations[lang].location_for_direct_contacts;
+        // contacts webpage
+        if (document.getElementById('contacts_for_direct_contacts')) {
+            document.getElementById('contacts_for_direct_contacts').textContent = translations[lang].contacts_for_direct_contacts;
         }
-        if (document.getElementById('location_address')) {
-            document.getElementById('location_address').textContent = translations[lang].location_address;
+        if (document.getElementById('contacts_address')) {
+            document.getElementById('contacts_address').textContent = translations[lang].contacts_address;
         }
-        if (document.getElementById('location_working_time')) {
-            document.getElementById('location_working_time').textContent = translations[lang].location_working_time;
+        if (document.getElementById('contacts_working_time')) {
+            document.getElementById('contacts_working_time').textContent = translations[lang].contacts_working_time;
         }
 
 

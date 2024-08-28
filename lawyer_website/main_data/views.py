@@ -54,7 +54,7 @@ def about(request):
 
 
 def location(request):
-    return render(request, 'location.html')
+    return render(request, 'contacts.html')
 
 
 def activate(request, uidb64, token):
@@ -169,5 +169,5 @@ def custom_view(request):
         form.fields['header'].widget.attrs['disabled'] = True
         form.fields['text'].widget.attrs['disabled'] = True
 
-    return render(request, 'location.html', {'form': form})
+    return render(request, 'contacts.html', {'form': form})
 

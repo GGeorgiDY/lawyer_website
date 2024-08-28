@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/location.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 {% endblock %}
 
@@ -22,7 +22,7 @@
             <div class="glassEffectDiv">
                 <div class="infoWrapper">
                     <div class="col-auto">
-                        <h2 id="location_for_direct_contacts">For Direct Contacts:</h2>
+                        <h2 id="contacts_for_direct_contacts">For Direct Contacts:</h2>
                         <div class="contact-box" style="width: 100%; margin-bottom: 30px">
 
                             <div class="info-column">
@@ -40,14 +40,14 @@
                             </div>
 
                             <div class="info-column">
-                                <p id="location_address">City of Sofia, 1 Vitosha Str</p>
+                                <p id="contacts_address">City of Sofia, 1 Vitosha Str</p>
                                 <div class="contact-icon-box">
                                     <i class="fas fa-home fa-2x"></i>
                                 </div>
                             </div>
 
                             <div class="info-column">
-                                <p id="location_working_time">Пон. - Пет. 09:00-18:00</p>
+                                <p id="contacts_working_time">Пон. - Пет. 09:00-18:00</p>
                                 <div class="contact-icon-box">
                                     <i class="fas fa-clock fa-2x"></i>
                                 </div>
@@ -62,7 +62,7 @@
 {% endblock %}
 
 {% block extra_js %}
-    <script src="{% static 'js/location.js' %}"></script>
+    <script src="{% static 'js/contacts.js' %}"></script>
     <script src="{% static 'js/language-switcher.js' %}"></script>
 {% endblock %}
 

@@ -40,52 +40,34 @@
             <nav class="navbar-menu">
                 <ul class="navbar-list">
                     <li class="navbar-item">
-                        <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+                        <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}" id="home-link">Home</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About</a>
+                        <a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}" id="about-link">About</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="{% url 'article_list' %}" class="{% if request.path == '/news/' %}active{% endif %}">News</a>
+                        <a href="{% url 'article_list' %}" class="{% if request.path == '/news/' %}active{% endif %}" id="news-link">News</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="{% url 'location' %}" class="{% if request.path == '/location/' %}active{% endif %}">Contacts</a>
+                        <a href="{% url 'location' %}" class="{% if request.path == '/location/' %}active{% endif %}" id="contacts-link">Contacts</a>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="navbar-item">
-                            <a href="{% url 'profile' %}" class="{% if request.path == '/profile/' %}active{% endif %}">Profile</a>
+                            <a href="{% url 'profile' %}" class="{% if request.path == '/profile/' %}active{% endif %}" id="profile-link">Profile</a>
                         </li>
                         <li class="navbar-item">
                             <a href="{% url 'logout' %}" id="logout-link">Logout</a>
                         </li>
                     {% else %}
                         <li class="navbar-item">
-                            <a href="{% url 'login' %}" class="{% if request.path == '/login/' %}active{% endif %}">Login</a>
+                            <a href="{% url 'login' %}" class="{% if request.path == '/login/' %}active{% endif %}" id="login-link">Login</a>
                         </li>
                         <li class="navbar-item">
-                            <a href="{% url 'register' %}" class="{% if request.path == '/register/' %}active{% endif %}">Register</a>
+                            <a href="{% url 'register' %}" class="{% if request.path == '/register/' %}active{% endif %}" id="register-link">Register</a>
                         </li>
                     {% endif %}
                 </ul>
             </nav>
-{#            <nav class="navbar-menu">#}
-{#                <ul class="navbar-list">#}
-{#                    <li class="navbar-item"><a href="{% url 'home' %}" id="home-link">Home</a></li>#}
-{#                    <li class="navbar-item"><a href="{% url 'about' %}" id="about-link">About</a></li>#}
-{#                    <li class="navbar-item"><a href="{% url 'article_list' %}" id="news-link">News</a></li>#}
-{#                    <li class="navbar-item"><a href="{% url 'location' %}" id="contacts-link">Contacts</a></li>#}
-{#                    {% if user.is_authenticated %}#}
-{#                        <li class="navbar-item"><a href="{% url 'profile' %}" id="profile-link">Profile</a></li>#}
-{#                        <li class="navbar-item"><a href="{% url 'logout' %}" id="logout-link">Logout</a></li>#}
-{#                    {% else %}#}
-{#                        <li class="navbar-item"><a href="{% url 'login' %}" id="login-link">Login</a></li>#}
-{#                        <li class="navbar-item"><a href="{% url 'register' %}" id="register-link">Register</a></li>#}
-{#                    {% endif %}#}
-{#                </ul>#}
-{#            </nav>#}
-            <!-- Language Switcher Button -->
-{#            <button id="language-switcher" class="language-switcher-btn">EN</button>#}
-
             <div id="language-switcher" class="language-switcher-container">
                 <img src="{% static 'images/flags/en.png' %}" alt="English" id="flag-en" class="language-flag">
                 <img src="{% static 'images/flags/bg.png' %}" alt="Bulgarian" id="flag-bg" class="language-flag" style="display: none;">

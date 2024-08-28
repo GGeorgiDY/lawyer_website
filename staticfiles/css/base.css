@@ -39,7 +39,12 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 0.85em; /* Slightly reduce the font size */
+    /*font-size: 0.85em; !* Slightly reduce the font size *!*/
+    font-size: 15px; /* Slightly reduce the font size */
+}
+
+.top-bar-right span a {
+    font-family: Arial;
 }
 
 .top-bar a {
@@ -55,6 +60,7 @@ body {
 .top-bar-right span:last-child a {
     font-size: 1.2em; /* Slightly reduce the size of the icons */
     margin-left: 5px;
+    /*color: #007bff;*/
 }
 
 .header {
